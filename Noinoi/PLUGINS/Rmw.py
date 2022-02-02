@@ -4,7 +4,7 @@ from pyrogram.types import Message
 from Process.filters import command, other_filters
 from Process.decorators import sudo_users_only, errors
 
-downloads = os.path.realpath("RaiChu/downloads")
+downloads = os.path.realpath("BAZIGAR/downloads")
 raw = os.path.realpath(".")
 
 @Client.on_message(command(["rmd", "clear"]) & ~filters.edited)
@@ -19,7 +19,8 @@ async def clear_downloads(_, message: Message):
     else:
         await message.reply_text("❌ **NO FILES DOWNLOADED**")
 
-    #WHAT'S UP KANGERS    
+   # RMW CLEAN 
+
 @Client.on_message(command(["rmw", "clean"]) & ~filters.edited)
 @errors
 @sudo_users_only
