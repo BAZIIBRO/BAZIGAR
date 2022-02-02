@@ -1,13 +1,13 @@
 {
-    "name": "ProMusic",
-    "logo": "https://telegra.ph/file/95c333a0e464b4ee1228f.jpg",
-    "description": "Pro Music allow you to stream music trought the telegram voice chat feature.",
+    "name": "NOINOI MUSIC",
+    "logo": "https://telegra.ph/file/9538b86070d36776f02d8.jpg",
+    "description": "Noinoi Music allow you to stream music trought the telegram voice chat feature.",
     "keywords": [
         "music", 
         "voice chat", 
         "telegram"
     ],
-    "repository": "https://github.com/FriDayXD/ProMusic",
+    "repository": "https://github.com/HYKO-XD/NOINOI-MUSIC",
     "stack": "container",
     "env": {
         "SESSION_NAME": {
