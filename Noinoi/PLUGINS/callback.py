@@ -1,7 +1,7 @@
 from Process.queues import QUEUE
 from pyrogram import Client, filters
 from pyrogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup
-from Config import (
+from Noinoi.Config import (
     ASSISTANT_NAME,
     BOT_NAME,
     BOT_USERNAME,
@@ -42,9 +42,6 @@ async def cbmenu(_, query: CallbackQuery):
          )
     else:
         await query.answer("❌ nothing is currently streaming", show_alert=True)
-
-# WHAT'S UP KANGERS......................................................................................................................................................................................
-
 
 @Client.on_callback_query(filters.regex("cls"))
 async def close(_, query: CallbackQuery):
