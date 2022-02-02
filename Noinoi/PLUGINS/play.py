@@ -1,4 +1,4 @@
-# © TeamRaichu
+# © NOINOI MUSIC CFC BOTS
 import io
 from os import path
 from typing import Callable
@@ -12,10 +12,10 @@ import ffmpeg
 import requests
 from Process.fonts import CHAT_TITLE
 from PIL import Image, ImageDraw, ImageFont
-from Config import ASSISTANT_NAME, BOT_USERNAME, IMG_1, IMG_2, IMG_5
+from Noinoi.Config import ASSISTANT_NAME, BOT_USERNAME, IMG_1, IMG_2, IMG_5
 from Process.filters import command, other_filters
 from Process.queues import QUEUE, add_to_queue
-from ImageFont.main import call_py, user
+from Noinoi.EXTRAS.main import call_py, user
 from Process.utils import bash
 from pyrogram import Client
 from pyrogram.errors import UserAlreadyParticipant, UserNotParticipant
@@ -96,7 +96,7 @@ async def generate_cover(thumbnail, title, userid, ctitle):
                 await f.write(await resp.read())
                 await f.close()
     image1 = Image.open(f"thumb{userid}.png")
-    image2 = Image.open("ImageFont/raichux.png")
+    image2 = Image.open("Noinoi/EXTRAS/BAZIGAR.png")
     image3 = changeImageSize(1280, 720, image1)
     image4 = changeImageSize(1280, 720, image2)
     image5 = image3.convert("RGBA")
@@ -104,8 +104,8 @@ async def generate_cover(thumbnail, title, userid, ctitle):
     Image.alpha_composite(image5, image6).save(f"temp{userid}.png")
     img = Image.open(f"temp{userid}.png")
     draw = ImageDraw.Draw(img)
-    font = ImageFont.truetype("ImageFont/finalfont.ttf", 60)
-    font2 = ImageFont.truetype("ImageFont/finalfont.ttf", 70)     
+    font = ImageFont.truetype("Noinoi/EXTRAS/finalfont.ttf", 60)
+    font2 = ImageFont.truetype("Noinoi/EXTRAS/finalfont.ttf", 70)     
     draw.text((20, 45), f"{title[:30]}...", fill= "white", stroke_width = 1, stroke_fill="white", font=font2)
     draw.text((120, 595), f"Playing on: {ctitle[:20]}...", fill="white", stroke_width = 1, stroke_fill="white" ,font=font)
     img.save(f"final{userid}.png")
@@ -125,16 +125,9 @@ async def play(c: Client, m: Message):
     chat_id = m.chat.id
     keyboard = InlineKeyboardMarkup(
                   [[
-                      InlineKeyboardButton("⏹", callback_data="cbstop"),
-                      InlineKeyboardButton("⏸", callback_data="cbpause"),
-                      InlineKeyboardButton('⏭️', callback_data="skip"),
-                      InlineKeyboardButton("▶️", callback_data="cbresume"),
-                  ],[
-                      InlineKeyboardButton("• Cʜᴀɴɴᴇʟ", url=f"https://t.me/VEXERA_UPDATES"),
-                      InlineKeyboardButton("• Group", url=f"https://t.me/SNEHABHI_SERVER"),
-                  ],[
-                      InlineKeyboardButton("🗑 Close", callback_data="cls")],
-                  ]
+                      InlineKeyboardButton("• Cʜᴀɴɴᴇʟ", url=f"https://t.me/BAZIGARXD"),
+                      InlineKeyboardButton("• Group", url=f"https://t.me/CFC_BOT_SUPPORT"),
+                  ],
              )
     if m.sender_chat:
         return await m.reply_text("you're an __Anonymous__ Admin !\n\n» revert back to user account from admin rights.")
@@ -245,18 +238,15 @@ async def play(c: Client, m: Message):
                       reply_markup=InlineKeyboardMarkup(
                     [
                         [
-                            InlineKeyboardButton("📣 Channel", url=f"https://t.me/VEXERA_UPDATES"),
-                            InlineKeyboardButton("💭 Support", url=f"https://t.me/SNEHABHI_SERVER")
+                            InlineKeyboardButton("📣 Channel", url=f"https://t.me/BAZIGARXD"),
+                            InlineKeyboardButton("💭 Support", url=f"https://t.me/CFC_BOT_SUPPORT")
                         ],
-                        [
-                            InlineKeyboardButton("🗑 Close", callback_data="cls")
-                        ]
                     ]
                 )
             )
         else:
             suhu = await m.reply_text(
-        f"**VEXERA Downloader**\n\n0% ▓▓▓▓▓▓▓▓▓▓▓▓ 100%"
+        f"**NOINOI MUSIC**\n\n0% ▓▓▓▓▓▓▓▓▓▓▓▓ 100%"
     )
             query = m.text.split(None, 1)[1]
             search = ytsearch(query)
