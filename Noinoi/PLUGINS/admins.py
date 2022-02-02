@@ -1,11 +1,11 @@
 from Process.Cache.admins import admins
-from ImageFont.main import call_py
+from Noinoi.EXTRAS.main import call_py
 from pyrogram import Client, filters
 from Process.decorators import authorized_users_only
 from Process.filters import command, other_filters
 from Process.queues import QUEUE, clear_queue
 from Process.utils import skip_current_song, skip_item
-from Config import BOT_USERNAME, GROUP_SUPPORT, IMG_3, UPDATES_CHANNEL
+from Noinoi.Config import BOT_USERNAME, GROUP_SUPPORT, IMG_3, UPDATES_CHANNEL
 from pyrogram.types import (
     CallbackQuery,
     InlineKeyboardButton,
@@ -413,4 +413,3 @@ async def change_volume(client, m: Message):
     else:
         await m.reply("💬 **nothing in streaming**")
       
-#WHAT'S UP KANGERS
